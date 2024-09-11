@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon List</title>
+</head>
+
+<style>
+  html{
+    font-size: 62.5%;
+  }
+
+  body{
+    background-image: url("https://freefrontend.com/assets/img/css-background-patterns/2023-dark-mode-mastodon-pattern.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    
+  }
+
+  .lista-pokemon{
+    text-transform: capitalize;
+    font-size: 1rem;
+    display: inline-block;
+    border-radius: 2rem;
+    padding: 2.4rem 3.2rem;
+    background-color: #ffffff;
+    color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+</style>
+<body>
+
+
+
+  <h1>Pokémon List</h1>
+  <ul>
+    <% pokemons.forEach(function(pokemon) { %>
+
+      <li class="lista-pokemon"><a href="/detalhes/<%= pokemon.name %>"><%= pokemon.name %></a></li>
+    <% }); %>
+  </ul>
+</body>
+</html>
