@@ -10,7 +10,8 @@ app.get('/', async (request: Request, response: Response) => {
   const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=5');
   const data = await res.json();
 
- 
+ //----------------------- ROTA DA LISTA DO POKEMON -----------------------\\
+
   const pokemonsWithImages = await Promise.all(
     data.results.map(async (pokemon: { name: string; url: string }) => {
       const pokemonRes = await fetch(pokemon.url);
@@ -18,8 +19,8 @@ app.get('/', async (request: Request, response: Response) => {
       return {
         name: pokemon.name,
         image: pokemonData.sprites.front_default,
-      };
-    })
+  };
+  })
   );
   response.render('index', { pokemons: pokemonsWithImages });
 });

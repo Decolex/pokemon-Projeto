@@ -4,41 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokémon List</title>
+  <style>
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      background-image: url("https://freefrontend.com/assets/img/css-background-patterns/2023-dark-mode-mastodon-pattern.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    h1{
+      
+      text-align: center;
+      font-size: 2rem;
+      margin: 2rem auto;
+      display: block;
+      border-radius: 2rem;
+      padding: 2.4rem 3.2rem;
+      background-color: #f42c2c;
+      color: white;
+      box-shadow: 0.1rem 0.5rem 0.5rem 0.1rem rgba(80, 80, 80, 0.553), inset 0rem 0rem 1rem 0.5rem #a00505b3;
+      width: fit-content;
+    }
+  
+
+    .pokemon-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .pokemon-card {
+      border-radius: 2rem;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      overflow: hidden;
+      width: 15rem;
+      background-color: white;
+      text-align: center;
+      font-size: 1.6rem;
+    }
+
+    .pokemon-card .pokemon-image {
+      background-image: url('https://i.pinimg.com/564x/32/b3/dd/32b3dd9ab04b94d686d9da7675cbd62d.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 2rem;
+    }
+
+    .pokemon-card img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .pokemon-name {
+      padding: 1rem;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    .pokemon-name a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+  </style>
 </head>
-
-<style>
-  html{
-    font-size: 62.5%;
-  }
-
-  body{
-    background-image: url("https://freefrontend.com/assets/img/css-background-patterns/2023-dark-mode-mastodon-pattern.png");
-    background-size:cover;
-    background-repeat:no-repeat;
-    
-  }
-
-  .lista-pokemon{
-    text-transform: capitalize;
-    font-size: 1rem;
-    display: inline-block;
-    border-radius: 2rem;
-    padding: 2.4rem 3.2rem;
-    background-color: #ffffff;
-    color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  }
-</style>
 <body>
 
+  <h1>Lista Pokémon</h1>
 
-
-  <h1>Pokémon List</h1>
-  <ul>
+  <div class="pokemon-list">
     <% pokemons.forEach(function(pokemon) { %>
+      <div class="pokemon-card">
+        <!-- Parte superior: fundo de imagem e imagem do Pokémon -->
+        <div class="pokemon-image">
+          <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
+        </div>
 
-      <li class="lista-pokemon"><a href="/detalhes/<%= pokemon.name %>"><%= pokemon.name %></a></li>
+        <!-- Parte inferior: nome do Pokémon -->
+        <div class="pokemon-name">
+          <a href="/detalhes/<%= pokemon.name %>"><%= pokemon.name %></a>
+        </div>
+      </div>
     <% }); %>
-  </ul>
+  </div>
+
 </body>
 </html>
