@@ -7,7 +7,7 @@ app.set('views', __dirname + '/views');
 //----------------------- ROTA DA LISTA DO POKEMON -----------------------\\
 
 app.get('/', async (request: Request, response: Response) => {
-  const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=5');
+  const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=24');
   const data = await res.json();
 
  //----------------------- ROTA DA LISTA DO POKEMON -----------------------\\

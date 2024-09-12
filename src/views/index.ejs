@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Honk&family=Nabla&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Honk&family=Nabla&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
   <title>Pokémon List</title>
   <style>
     html {
@@ -10,7 +19,7 @@
     }
 
     body {
-      background-image: url("https://freefrontend.com/assets/img/css-background-patterns/2023-dark-mode-mastodon-pattern.png");
+      background-image: url("https://freefrontend.com/assets/img/css-background-patterns/2023-hexagonal-tessellated-pattern-no-div-pure-css.png");
       background-size: cover;
       background-repeat: no-repeat;
       display: flex;
@@ -20,27 +29,28 @@
       min-height: 100vh;
     }
     h1{
-      
+      font-family: "Honk", system-ui;
       text-align: center;
-      font-size: 2rem;
+      font-size: 15rem;
       margin: 2rem auto;
       display: block;
       border-radius: 2rem;
       padding: 2.4rem 3.2rem;
-      background-color: #f42c2c;
+      /* background-color: #f42c2c;
       color: white;
       box-shadow: 0.1rem 0.5rem 0.5rem 0.1rem rgba(80, 80, 80, 0.553), inset 0rem 0rem 1rem 0.5rem #a00505b3;
-      width: fit-content;
+      width: fit-content; */
     }
-  
-
+    
+    
     .pokemon-list {
+      font-family: "Aref Ruqaa Ink", serif;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
     }
-
+    
     .pokemon-card {
       border-radius: 2rem;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -57,7 +67,7 @@
       background-position: center;
       padding: 2rem;
     }
-
+    
     .pokemon-card img {
       width: 100px;
       height: 100px;
@@ -70,32 +80,37 @@
       font-weight: bold;
       text-transform: capitalize;
     }
-
+    
     .pokemon-name a {
       text-decoration: none;
       color: inherit;
     }
-
-  </style>
+    
+    
+    </style>
 </head>
 <body>
-
+  
   <h1>Lista Pokémon</h1>
-
+  
   <div class="pokemon-list">
     <% pokemons.forEach(function(pokemon) { %>
       <div class="pokemon-card">
         <!-- Parte superior: fundo de imagem e imagem do Pokémon -->
-        <div class="pokemon-image">
-          <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
-        </div>
-
+        <a href="/detalhes/<%= pokemon.name %>">
+          <div class="pokemon-image">
+            <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
+          </div>
+        </a>
+  
         <!-- Parte inferior: nome do Pokémon -->
         <div class="pokemon-name">
           <a href="/detalhes/<%= pokemon.name %>"><%= pokemon.name %></a>
         </div>
       </div>
     <% }); %>
+  </div>
+  
   </div>
 
 </body>

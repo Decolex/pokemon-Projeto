@@ -45,7 +45,7 @@
       
     }
 
-    img {
+    .img-pokemon {
       display: inline-block;
       height: 10rem;
       padding: 0.5rem 0.5rem;
@@ -58,33 +58,45 @@
     h1, h2, ul:first-child{
       text-transform: uppercase;
     }
-    
-    .h2-stats{
-      text-transform: capitalize;
-      /* text-align: center; */
-      margin: 0.5rem 40%;
-      font-size: 1.5rem;
-    }
-    .h2-tipo{
-      text-transform: capitalize;
-      /* text-align: center; */
-      margin: 0.5rem 42.5%;
-      font-size: 1.5rem;
-    }
-    .h2-hab{
-      text-transform: capitalize;
-      text-align: center;
-      margin: 0.5rem 42.5%;
-      font-size: 1.5rem;
-    }
 
-    .stats{
+    ul {
+      text-align: center;
+      padding: 0;
+    }
+    li.stats, li.tipo, li.hab {
       font-size: 1rem;
       display: inline-block;
       border-radius: 2rem;
       padding: 2.4rem 3.2rem;
+      box-shadow: rgba(59, 58, 59, 0.303) 0px 5px, rgba(59, 58, 59, 0.303) 0px 10px;
+      text-transform: capitalize;
+      margin: 1rem 0;
+    }
+    
+    footer{
+      width: 10rem;
+      height: 10rem;
+    }
+
+    .h2-stats, .h2-tipo, .h2-hab {
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      color: black;
+      margin: 0.5rem auto;
+      background-image: url("https://img.freepik.com/free-vector/grainy-gradient-texture_23-2148967280.jpg");
+      background-size: cover;
+      position: sticky;
+      left: 1.5rem;
+    }
+
+    .stats{
+      font-size: 1rem;
+      font-family:"Impact", Haettenschweiler, Arial Narrow Bold, sans-serif;
+      display: inline-block;
+      border-radius: 2rem;
+      padding: 2.4rem 3.2rem;
       background-color: #fff700;
-      color: white;
+      color: rgba(0, 0, 0, 0.951);
       box-shadow: rgba(59, 58, 59, 0.303) 0px 5px,rgba(59, 58, 59, 0.303) 0px 10px, rgba(59, 58, 59, 0.303) 0px 15px, rgba(59, 58, 59, 0.303) 0px 20px, rgba(59, 58, 59, 0.303) 0px 25px;
       text-transform: capitalize;
     }
@@ -179,7 +191,12 @@
 }
 
 
-    
+.img-wpp{
+
+  text-align: left;
+  position: sticky;
+  
+}    
 
   </style>
 </head>
@@ -189,7 +206,7 @@
   <h1><%= name %></h1>
 
   <!--IMAGEM DO POKEMON  -->
-  <img src="<%= image %>" alt="<%= name %> Image">
+  <img class="img-pokemon" src="<%= image %>" alt="<%= name %> Image">
 
   <!-- TYPE DO POKEMON -->
   <h2 class="h2-tipo">tipo pokemon</h2>
@@ -217,6 +234,14 @@
   </ul>
   
   <a class="glow-on-hover " href="/"> 👈 </a> 
+
+
+  <p>Todos os direitos reservados para Matheus Decol</p>
+  <a href="https://w.app/fJY3UD">
+    <img class="img-wpp"  src="https://www.hashtagtreinamentos.com/wp-content/uploads/2023/06/whatsapp-logo-2.png" alt="Logo do WhatsApp"/>
+    </a>
+
+
 
 </body>
 </html>
