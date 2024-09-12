@@ -17,7 +17,9 @@
     html {
       font-size: 62.5%;
     }
+    
 
+    
     body {
       background-image: url("https://freefrontend.com/assets/img/css-background-patterns/2023-hexagonal-tessellated-pattern-no-div-pure-css.png");
       background-size: cover;
@@ -96,14 +98,14 @@
   <div class="pokemon-list">
     <% pokemons.forEach(function(pokemon) { %>
       <div class="pokemon-card">
-        <!-- Parte superior: fundo de imagem e imagem do Pokémon -->
+        
         <a href="/detalhes/<%= pokemon.name %>">
           <div class="pokemon-image">
             <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
           </div>
         </a>
   
-        <!-- Parte inferior: nome do Pokémon -->
+      
         <div class="pokemon-name">
           <a href="/detalhes/<%= pokemon.name %>"><%= pokemon.name %></a>
         </div>
