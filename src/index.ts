@@ -45,6 +45,8 @@ app.get('/detalhes/:name', async (req: Request, res: Response) => {
     image: pokemonData.sprites.front_default,
     image2: pokemonData.sprites.front_shiny
 
+
+    
   });
 });
 
