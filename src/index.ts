@@ -7,7 +7,7 @@ app.set('views', __dirname + '/views');
 //----------------------- ROTA DA LISTA DO POKEMON -----------------------\\
 
 app.get('/', async (request: Request, response: Response) => {
-  const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=24');
+  const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=50');
   const data = await res.json();
 
  //----------------------- ROTA DA LISTA DO POKEMON -----------------------\\
@@ -18,7 +18,7 @@ app.get('/', async (request: Request, response: Response) => {
       const pokemonData = await pokemonRes.json();
       return {
         name: pokemon.name,
-        image: pokemonData.sprites.front_default,
+        image: pokemonData.sprites.versions['generation-v']['black-white'].animated.front_default
   };
   })
   );
@@ -42,7 +42,9 @@ app.get('/detalhes/:name', async (req: Request, res: Response) => {
     detalhes: pokemonData.stats, 
     types: pokemonData.types,
     abilities: pokemonData.abilities,
-    image: pokemonData.sprites.front_default
+    image: pokemonData.sprites.front_default,
+    image2: pokemonData.sprites.front_shiny
+
   });
 });
 

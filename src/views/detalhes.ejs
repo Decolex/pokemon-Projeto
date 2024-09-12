@@ -9,17 +9,17 @@
       height: 62.5%;
     }
 
-    body{
+    body {
       font-family: "Montserrat", sans-serif;
       font-size: 1.8rem;
-      line-height:  1.4;
+      line-height: 1.4;
       text-align: center;
       background-image: url("https://external-preview.redd.it/z7_wYb9-YSvt0pDJlDIu8iuK_aWdqZPg0wvrGdwNvBw.png?width=1080&crop=smart&auto=webp&s=b51a1bf0f7fb0810d91edeaa1a4ba38bef4334c7");
-      background-size:cover;
-      background-repeat:repeat-y;
+      background-size: cover;
+      background-repeat: repeat-y;
     }
 
-    h1{
+    h1 {
       text-align: center;
       font-size: 2rem;
       margin: 2rem auto;
@@ -31,7 +31,8 @@
       box-shadow: 0.1rem 0.5rem 0.5rem 0.1rem rgba(80, 80, 80, 0.553), inset 0rem 0rem 1rem 0.5rem #a00505b3;
       width: fit-content;
     }
-    h2{
+
+    h2 {
       text-align: center;
       font-size: 0.2rem;
       margin: 2rem auto;
@@ -42,20 +43,25 @@
       color: white;
       box-shadow: 0.1rem 0.5rem 0.5rem 0.1rem rgba(80, 80, 80, 0.553), inset 0rem 0rem 1rem 0.5rem #037571b3;
       width: fit-content;
-      
+    }
+
+    /* Contêiner das imagens para alinhá-las lado a lado */
+    .img-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
 
     .img-pokemon {
-      display: inline-block;
-      height: 10rem;
-      padding: 0.5rem 0.5rem;
-      margin: 1rem 38%;
+      height: 12rem;
+      padding: 0.5rem;
       background-image: url("https://i.pinimg.com/564x/32/b3/dd/32b3dd9ab04b94d686d9da7675cbd62d.jpg");
       box-shadow: 0rem 0rem 1rem 0.5rem rgba(0, 0, 0, 0.3);
       border-radius: 20%;
-      
     }
-    h1, h2, ul:first-child{
+
+    h1, h2, ul:first-child {
       text-transform: uppercase;
     }
 
@@ -63,6 +69,7 @@
       text-align: center;
       padding: 0;
     }
+
     li.stats, li.tipo, li.hab {
       font-size: 1rem;
       display: inline-block;
@@ -72,17 +79,7 @@
       text-transform: capitalize;
       margin: 1rem 0;
     }
-    
-    footer{
-      width: 100%;
-      height: 10rem;
-      background-color: white;
-    }
 
-    .content{
-      padding-bottom: 5rem;
-      color: white;
-    }
     .h2-stats, .h2-tipo, .h2-hab {
       text-transform: capitalize;
       font-size: 1.5rem;
@@ -94,47 +91,31 @@
       left: 1.5rem;
     }
 
-    .stats{
-      font-size: 1rem;
-      font-family:"Impact", Haettenschweiler, Arial Narrow Bold, sans-serif;
-      display: inline-block;
-      border-radius: 2rem;
-      padding: 2.4rem 3.2rem;
+    .stats {
       background-color: #fff700;
       color: rgba(0, 0, 0, 0.951);
-      box-shadow: rgba(59, 58, 59, 0.303) 0px 5px,rgba(59, 58, 59, 0.303) 0px 10px, rgba(59, 58, 59, 0.303) 0px 15px, rgba(59, 58, 59, 0.303) 0px 20px, rgba(59, 58, 59, 0.303) 0px 25px;
-      text-transform: capitalize;
     }
 
-    .tipo{
-      font-size: 1rem;
-      display: inline-block;
-      border-radius: 2rem;
-      padding: 2.4rem 3.2rem;
+    .tipo {
       background-color: #d607e4;
       color: white;
-      box-shadow: rgba(59, 58, 59, 0.303) 0px 5px,rgba(59, 58, 59, 0.303) 0px 10px, rgba(59, 58, 59, 0.303) 0px 15px, rgba(59, 58, 59, 0.303) 0px 20px, rgba(59, 58, 59, 0.303) 0px 25px;
-      text-transform: capitalize;
     }
 
-    .hab{
-      font-size: 1rem;
-      display: inline-block;
-      border-radius: 2rem;
-      padding: 2.4rem 3.2rem;
+    .hab {
       background-color: #07e407;
       color: white;
-      box-shadow: rgba(59, 58, 59, 0.303) 0px 5px,rgba(59, 58, 59, 0.303) 0px 10px, rgba(59, 58, 59, 0.303) 0px 15px, rgba(59, 58, 59, 0.303) 0px 20px, rgba(59, 58, 59, 0.303) 0px 25px;
-      text-transform: capitalize;
     }
-    
-    /* BOTAO */
+
+    footer {
+      width: 100%;
+      height: 10rem;
+      background-color: white;
+    }
 
     .glow-on-hover {
       position: fixed;
       bottom: 1.5rem;
       right: 1.5rem;
-      margin: 1rem 1rem;
       width: 3rem;
       height: 3rem;
       border: none;
@@ -146,14 +127,14 @@
       border-radius: 1rem;
       padding: 0.7rem;
       text-decoration: none;
-}
+    }
 
-.glow-on-hover:before {
+    .glow-on-hover:before {
       content: '';
       background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
       position: absolute;
       top: -0.2rem;
-      left:-0.2rem;
+      left: -0.2rem;
       background-size: 400%;
       z-index: -1;
       filter: blur(0.5rem);
@@ -161,48 +142,29 @@
       height: calc(100% + 0.4rem);
       animation: glowing 20s linear infinite;
       opacity: 0;
-      transition: opacity .3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
       border-radius: 1rem;
-}
+    }
 
-.glow-on-hover:active {
-    color: #000
-}
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
 
-.glow-on-hover:active:after {
-    background: transparent;
-}
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
 
-.glow-on-hover:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 1rem;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-
-
-.img-wpp{
-  width: 5rem;
-  text-align: left;
-  position: sticky;
-  text-decoration: none;
-}    
-
+    .img-wpp {
+      width: 5rem;
+    }
   </style>
 </head>
 <body>
@@ -210,8 +172,13 @@
   <!-- NOME DO POKEMON -->
   <h1><%= name %></h1>
 
-  <!--IMAGEM DO POKEMON  -->
-  <img class="img-pokemon" src="<%= image %>" alt="<%= name %> Image">
+  <!--IMAGENS DO POKEMON (NORMAL E SHINY)-->
+  <div class="img-container">
+
+    
+    <img class="img-pokemon" src="<%= image %>" alt="<%= name %> Normal Image">
+    <img class="img-pokemon" src="<%= image2 %>" alt="<%= name %> Shiny Image">
+  </div>
 
   <!-- TYPE DO POKEMON -->
   <h2 class="h2-tipo">tipo pokemon</h2>
@@ -229,30 +196,26 @@
     <% }); %>
   </ul>
 
-  
   <!-- HABILIDADES DO POKEMON -->
-  <h2 class="h2-hab">habilidades </h2>
+  <h2 class="h2-hab">habilidades</h2>
   <ul>
     <% abilities.forEach(function(ability) { %>
       <li class="hab"><%= ability.ability.name %></li>
     <% }); %>
   </ul>
-  
-  <a class="glow-on-hover " href="/"> 👈 </a> 
 
+  <!-- Botão para voltar -->
+  <a class="glow-on-hover" href="/"> 👈 </a>
 
-  
   <footer>
     <p>Todos os direitos reservados para Matheus Decol</p>
     <a href="https://w.app/fJY3UD">
-      <img class="img-wpp"  src="https://www.hashtagtreinamentos.com/wp-content/uploads/2023/06/whatsapp-logo-2.png" alt="Logo do WhatsApp"/>
+      <img class="img-wpp" src="https://www.hashtagtreinamentos.com/wp-content/uploads/2023/06/whatsapp-logo-2.png" alt="Logo do WhatsApp">
     </a>
     <a href="https://github.com/Decolex">
       <img class="img-wpp" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo github">
     </a>
-    
   </footer>
-
 
 </body>
 </html>
